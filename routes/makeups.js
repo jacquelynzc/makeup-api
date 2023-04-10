@@ -7,8 +7,8 @@ const router = Router();
 
 router.get("/", controllers.getMakeup);
 router.get("/:id", controllers.getMakeups);
-router.post("/", controllers.createMakeups);
-router.put("/:id", controllers.updateMakeups);
-router.delete("/:id", controllers.deleteMakeups);
+router.post("/", controllers.createMakeup);
+router.put("/:id", controllers.updateMakeup);
+router.delete("/:id", controllers.deleteMakeup);
 
 export default router;
