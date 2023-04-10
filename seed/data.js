@@ -1,3 +1,4 @@
+import connection from '../db/connection.js'
 import Makeup from '../models/Makeup.js';
 import makeups from '../db/makeups.json' assert {type: 'json'};;
 

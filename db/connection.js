@@ -1,14 +1,16 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
 
+const DB_URI = 'mongodb://localhost:27017/api-project';
+
+const PORT = process.env.PORT || 5000;
+
 const MONGODB_URI =
   process.env.PROD_MONGODB || "mongodb://127.0.0.1:27017/api-project";
 
   mongoose.connect(MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      autoIndex: false
     })
     .then(() => console.log('Connected to MongoDB!'))
     .catch((error) => {
@@ -34,5 +36,7 @@ const MONGODB_URI =
           process.exit(0);
         });
       });
+
+
       
 export default mongoose.connection;

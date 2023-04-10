@@ -2,7 +2,7 @@ import Makeup from "../models/Makeup.js";
 
 export const getMakeups = async (req, res) => {
   try {
-    const makeups = await makeups.find();
+    const makeups = await Makeup.find();
     res.json(makeups);
   } catch (error) {
     console.log(error);
@@ -13,46 +13,46 @@ export const getMakeups = async (req, res) => {
 export const getMakeup = async (req, res) => {
   try {
     const { id } = req.params;
-    const makeups = await makeups.findById(id).populate("members");
+    const makeup = await Makeup.findById(id);
 
-    if (makeups) {
-      return res.json(makeups);
+    if (makeup) {
+      return res.json(makeup);
     }
 
-    res.status(400).json({ message: "makeups not found!" });
+    res.status(400).json({ message: "Makeup not found!" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: error.message });
   }
 };
 
-export const createMakeups = async (req, res) => {
+export const createMakeup = async (req, res) => {
   try {
-    const makeups = new makeups(req.body);
-    await makeups.save();
-    res.status(201).json(makeups);
+    const makeup = new Makeup(req.body);
+    await makeup.save();
+    res.status(201).json(makeup);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: error.message });
   }
 };
 
-export const updateMakeups = async (req, res) => {
+export const updateMakeup = async (req, res) => {
   const { id } = req.params;
-  const makeups = await makeups.findByIdAndUpdate(id, req.body);
-  res.status(200).json(makeups);
+  const makeup = await Makeup.findByIdAndUpdate(id, req.body);
+  res.status(200).json(makeup);
 };
 
-export const deleteMakeups = async (req, res) => {
+export const deleteMakeup = async (req, res) => {
   try {
     const { id } = req.params;
-    const deleted = await makeups.findByIdAndDelete(id);
+    const deleted = await Makeup.findByIdAndDelete(id);
 
     if (deleted) {
-      return res.status(200).send("makeups deleted!");
+      return res.status(200).send("Makeup deleted!");
     }
 
-    throw new Error("makeups not found");
+    throw new Error("Makeup not found");
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: error.message });

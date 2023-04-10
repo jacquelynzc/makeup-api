@@ -1,7 +1,7 @@
 
    
 import { Router } from "express";
-import * as controllers from "../controllers/houses.js";
+import * as controllers from "../controllers/makeups.js";
 
 const router = Router();
 
