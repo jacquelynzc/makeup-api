@@ -11,3 +11,12 @@ let newMakeups = makeups.map((makeup) => {
         colours: makeups.product_colors[{hex_value, colour_name}]
     }
 })
+
+Makeup
+    .deleteMany({})
+    .then(() => {
+        Makeup.create(newMakeups).then(data => {
+            console.log(data)
+            process.exit()
+        })
+    })
