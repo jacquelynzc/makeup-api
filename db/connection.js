@@ -4,21 +4,35 @@ import chalk from "chalk";
 const MONGODB_URI =
   process.env.PROD_MONGODB || "mongodb://127.0.0.1:27017/api-project";
 
-// This is for Model.findByIdAndUpdate method, specifically so that {new: true} is the default
-mongoose.set("returnOriginal", false);
-
-mongoose
-  .connect(MONGODB_URI)
-  .catch((error) =>
-    console.log("Error connecting to MongoDB: ", error.message)
-  );
-
-mongoose.connection.on("disconnected", () =>
-  console.log(chalk.bold("Disconnected from MongoDB!"))
-);
-
-mongoose.connection.on("error", (error) =>
-  console.error(chalk.red(`MongoDB connection error: ${error}`))
-);
-
+  mongoose.connect(MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      autoIndex: false
+    })
+    .then(() => console.log('Connected to MongoDB!'))
+    .catch((error) => {
+        console.error('Error connecting to MongoDB: ', error.message);
+        process.exit(1);
+    });
+    
+    mongoose.connection.once("open", () => {
+        console.log("Connected to MongoDB!");
+      });
+      
+      mongoose.connection.on("disconnected", () => {
+        console.log(chalk.bold("Disconnected from MongoDB!"));
+      });
+      
+      mongoose.connection.on("error", (error) => {
+        console.error(chalk.red(`MongoDB connection error: ${error}`));
+      });
+      
+      process.on("SIGINT", () => {
+        mongoose.connection.close(() => {
+          console.log("MongoDB connection closed!");
+          process.exit(0);
+        });
+      });
+      
 export default mongoose.connection;

@@ -1,18 +1,17 @@
-import mongoose from '../db/connection.js'
-const Schema = new mongoose.Schema
+import mongoose from 'mongoose'
 
-const makeupSchema = new Schema({
+const colourSchema = new mongoose.Schema ({
+    hexValue: String,
+    colourName: String
+})
+
+const makeupSchema = new mongoose.Schema ({
     name: String,
     brand: String,
     image: String,
     productLink: String,
     description: String,
     productColors: [colourSchema]
-})
-
-const colourSchema = new Schema({
-    hexValue: String,
-    colourName: String
 })
 
 export default mongoose.model('Makeup', makeupSchema)
