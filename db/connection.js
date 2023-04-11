@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
 
-const PORT = process.env.PORT || 5000;
-
 const MONGODB_URI =
-  process.env.PROD_MONGODB || "mongodb://127.0.0.1:27017/api-project";
+  process.env.PROD_MONGODB || "mongodb://127.0.0.1:27017/makeup";
 
   mongoose.connect(MONGODB_URI, {
       useNewUrlParser: true,
