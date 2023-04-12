@@ -23,9 +23,9 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.use(bodyParser.json());
 
-app.use('/makeup', makeupsRoutes);
+app.use('/api-project/makeups', makeupsRoutes);
 
-//router.get("/", (req, res) => res.send("This is the api root!"));
+router.get("/", (req, res) => res.send("This is the api root!"));
 router.use("/makeups", makeupsRoutes);
 
 

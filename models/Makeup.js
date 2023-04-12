@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const colourSchema = new mongoose.Schema ({
-    hexValue: String,
+    hex_value: String,
     colourName: String
 })
 
