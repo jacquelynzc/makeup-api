@@ -24,7 +24,7 @@ export const getMakeup = async (req, res) => {
 export const getMakeupByBrand = async (req, res) => {
   try {
     const brand = req.params.brand;
-    const makeup = await Makeup.find({brand: ""});
+    const makeup = await Makeup.find({brand: brand});
 
     if (makeup.length > 0) {
       return res.json(makeup);
