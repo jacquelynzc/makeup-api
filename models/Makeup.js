@@ -11,7 +11,7 @@ const makeupSchema = new mongoose.Schema ({
     image: String,
     productLink: String,
     description: String,
-    product_colors: [colourSchema]
+    colours: [colourSchema]
 })
 
 export default mongoose.model('Makeup', makeupSchema)
