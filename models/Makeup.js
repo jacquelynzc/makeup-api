@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const colourSchema = new mongoose.Schema ({
     hex_value: String,
-    colourName: String
+    colour_name: String
 })
 
 const makeupSchema = new mongoose.Schema ({
@@ -11,7 +11,7 @@ const makeupSchema = new mongoose.Schema ({
     image: String,
     productLink: String,
     description: String,
-    productColors: [colourSchema]
+    product_colors: [colourSchema]
 })
 
 export default mongoose.model('Makeup', makeupSchema)
