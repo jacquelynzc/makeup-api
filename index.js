@@ -14,7 +14,7 @@ app.use(cors()) // Allows front-end to consume our api
 
 // app.use(bodyParser.json());
 
-app.use('/', routes);
+app.use('/makeup', routes);
 
 const PORT = process.env.PORT || 3000;
 // mongoose.set('strictQuery', false)
