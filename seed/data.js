@@ -1,7 +1,6 @@
-import connection from '../db/connection.js'
+import db from '../db/connection.js'
 import Makeup from '../models/Makeup.js';
 import makeups from '../db/makeups.json' assert {type: 'json'};
-
 
 
 let newMakeups = makeups.map((makeup) => {
@@ -18,8 +17,8 @@ let newMakeups = makeups.map((makeup) => {
 Makeup.deleteMany({})
   .then(() => {
     Makeup.create(newMakeups)
-      .then(data => {
-        console.log(data);
-        process.exit();
+      .then(makeups => {
+        console.log(makeups);
+        db.close();
       });
   });

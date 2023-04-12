@@ -12,17 +12,27 @@ export const getMakeups = async (req, res) => {
 
 export const getMakeup = async (req, res) => {
   try {
-    const { id } = req.params;
-    const makeup = await Makeup.findById(`${id}`);
-
-    if (makeup) {
-      return res.json(makeup);
-    }
-
-    res.status(400).json({ message: "Makeup not found!" });
+    const {id} = req.params
+    const makeup = await Makeup.findById(id);
+    res.json(makeup);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: error.message });
+  }
+}
+
+export const getMakeupByBrand = async (req, res) => {
+  try {
+    const brand = req.params.brand;
+    const makeup = await Makeup.find({brand: ""});
+
+    if (makeup.length > 0) {
+      return res.json(makeup);
+    } else {res.status(404).json({error: error.message})}
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Makeup not found!" });
   }
 };
 

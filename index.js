@@ -1,36 +1,46 @@
-import { Router } from "express";
+import db from './db/connection.js';
 import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import makeupsRoutes from "./routes/makeups.js";
+import cors from 'cors';
+import routes from './routes/makeups.js'
+// import bodyParser from 'body-parser';
+// import makeupsRoutes from "./routes/makeups.js";
 
-const router = Router();
+// const router = Router();
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/api-project', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB Connected...'))
-.catch(err => console.log(err));
+// Middleware
+app.use(express.json()) // Lets us send and receive only json
+app.use(cors()) // Allows front-end to consume our api
+
+// app.use(bodyParser.json());
+
+app.use('/', routes);
+
+const PORT = process.env.PORT || 3000;
+// mongoose.set('strictQuery', false)
+
+// mongoose.connect('mongodb://127.0.0.1:27017/api-project', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+// .then(() => console.log('MongoDB Connected...'))
+// .catch(err => console.log(err));
 
 // app.listen(5000, () => {
 //   console.log('Server started on port 5000');
 // });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+db.on("connected", () => {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+})
 
-app.use(bodyParser.json());
-
-app.use('/makeup', makeupsRoutes);
 
 //router.get("/", (req, res) => res.send("This is the api root!"));
-router.use("/makeups", makeupsRoutes);
+// router.use("/makeups", makeupsRoutes);
 
 
 
 
 
 
-export default router;
+export default app;
