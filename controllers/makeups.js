@@ -38,12 +38,11 @@ export const getMakeupByBrand = async (req, res) => {
 
 export const getMakeupByType = async (req, res) => {
   try {
-    const productType = req.params.product_type;
-    console.log(productType)
-    const makeup = await Makeup.find({productType: productType});
-    if (makeup.length > 0) {
+    const productType = req.params.productType
+    const makeup = await Makeup.find({"productType": productType});
+    // if (makeup) {
       return res.json(makeup);
-    } else {res.status(404).json({error: error.message})}
+    // } else {res.status(404).json({error: error.message})}
 
   } catch (error) {
     console.log(error);
