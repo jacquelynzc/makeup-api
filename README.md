@@ -5,18 +5,15 @@
 ## •───────•°•❀•°•───────•
   
 
-<br>
 
 ### <center>
 
 ***API Endpoint***: <br> <a href="https://www.makeup.herokuapp.com/makeup" target="_blank">makeup.herokuapp.com/makeup</a> 
 
-<br>
-
 
 <br>
 
-### <center>***API Calls & Paths***: 
+### <center> ***API Calls & Paths***: 
 
 ###### *Response Format*: JSON
 
@@ -34,20 +31,20 @@
 - **DELETE**: <br>
   Deletes a makeup entry by ID using path: /:id
 
-<br>
+
 <center>
 
 
-<br>
+
 
 ---
-<br>
+
 
 ### ***Filters***
 
 </center>
 
-<br>
+
 
 - To search for the brand “benefit”, append '/brands/benefit' <br>
 *example*:
@@ -62,7 +59,6 @@
 [makeup.herokuapp.com/type/lipstick](makeup.herokuapp.com/type/lipstick)
 
 ---
-<br>
 
 ### ***Brands List***
 
@@ -130,7 +126,6 @@ zorah biocosmetiques
 ---
 
 <center>
-<br>
 
 ### ***Dependencies***
 
@@ -142,13 +137,6 @@ zorah biocosmetiques
 - cors
 - chalk
 - nodemon
-
-
-
-
-
-
-
 
 
 
