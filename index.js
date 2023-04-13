@@ -10,7 +10,7 @@ app.use(express.json()) // Lets us send and receive only json
 app.use(cors()) // Allows front-end to consume our api
 
 
-app.get("/", (req, res) => res.send("This is the api root!"));
+app.get("/", (req, res) => res.send("you've reached the root! append /makeup to the url for the json!"));
 app.use('/makeup', routes);
 
 const PORT = process.env.PORT || 3000;
