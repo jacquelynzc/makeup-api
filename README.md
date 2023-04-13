@@ -8,7 +8,7 @@
 
 ### <center>
 
-***API Endpoint***: <br> <a href="https://www.makeup.herokuapp.com/makeup" target="_blank">makeup.herokuapp.com/makeup</a> 
+***API Endpoint***: <br> <a href="https://makeup.herokuapp.com/makeup" target="_blank">makeup.herokuapp.com/makeup</a> 
 
 
 <br>
@@ -20,10 +20,10 @@
 </center>
 
 - **GET**: 
-  - <a href="https://www.makeup.herokuapp.com/makeup" target="_blank">Show makeup database with all products</a>
-  - <a href="https://www.makeup.herokuapp.com/makeup/brand/colourpop" target="_blank">Search by brand</a> (brand: colourpop)
-  - <a href="https://www.makeup.herokuapp.com/makeup/type/eyeliner" target="_blank">Search by name</a> (name: cloud paint)
-  - <a href="https://www.makeup.herokuapp.com/makeup/type/cloud paint" target="_blank">Search by type</a> (type: eyeliner)
+  - <a href="https://makeup.herokuapp.com/makeup" target="_blank">Show makeup database with all products</a>
+  - <a href="https://makeup.herokuapp.com/makeup/brand/colourpop" target="_blank">Search by brand</a> (brand: colourpop)
+  - <a href="https://makeup.herokuapp.com/makeup/type/eyeliner" target="_blank">Search by name</a> (name: cloud paint)
+  - <a href="https://makeup.herokuapp.com/makeup/type/cloud paint" target="_blank">Search by type</a> (type: eyeliner)
 - **POST**: <br>
   Add new makeup to the database using path: /
 - **PUT**: <br>
@@ -48,15 +48,15 @@
 
 - To search for the brand “benefit”, append '/brands/benefit' <br>
 *example*:
-[makeup.herokuapp.com/brands/benefit](makeup.herokuapp.com/brands/benefit)
+[makeup.herokuapp.com/brands/benefit](https://makeup.herokuapp.com/brands/benefit)
 
 - To search for the name "wowder", append '/name/wowder' <br>
 *example*:
-[makeup.herokuapp.com/name/wowder](makeup.herokuapp.com/name/wowder)
+[makeup.herokuapp.com/name/wowder](https://makeup.herokuapp.com/name/wowder)
 
 - To search for the type "lipstick", append '/type/lipstick' <br>
 *example*:
-[makeup.herokuapp.com/type/lipstick](makeup.herokuapp.com/type/lipstick)
+[makeup.herokuapp.com/type/lipstick](https://makeup.herokuapp.com/type/lipstick)
 
 ---
 
