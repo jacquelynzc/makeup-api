@@ -5,7 +5,9 @@
 ---
 <br>
 
-### <center>***API Endpoint***: <br> <a href="https://www.makeup.herokuapp.com/makeup" target="_blank">makeup.herokuapp.com/makeup</a> 
+### <center>
+
+***API Endpoint***: <br> <a href="https://www.makeup.herokuapp.com/makeup" target="_blank">makeup.herokuapp.com/makeup</a> 
 
 <br>
 
