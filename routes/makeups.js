@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", controllers.getMakeups);
 router.get("/:id", controllers.getMakeup);
 router.get("/type/:productType", controllers.getMakeupByType);
-router.get("/type/", controllers.getMakeups);
+router.get("/type", controllers.getMakeups);
 
 router.get("/name/:name", controllers.getMakeupByName);
 router.get("/brand/:brand", controllers.getMakeupByBrand);
