@@ -14,9 +14,9 @@ const MONGODB_URI =
         process.exit(1);
     });
     
-    mongoose.connection.once("open", () => {
-        console.log("Connected to MongoDB!");
-      });
+    // mongoose.connection.once("open", () => {
+    //     console.log("Connected to MongoDB!");
+    //   });
       
       mongoose.connection.on("disconnected", () => {
         console.log(chalk.bold("Disconnected from MongoDB!"));
@@ -26,12 +26,12 @@ const MONGODB_URI =
         console.error(chalk.red(`MongoDB connection error: ${error}`));
       });
       
-      process.on("SIGINT", () => {
-        mongoose.connection.close(() => {
-          console.log("MongoDB connection closed!");
-          process.exit(0);
-        });
-      });
+      // process.on("SIGINT", () => {
+      //   mongoose.connection.close(() => {
+      //     console.log("MongoDB connection closed!");
+      //     process.exit(0);
+      //   });
+      // });
 
 
       

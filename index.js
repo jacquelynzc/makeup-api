@@ -14,6 +14,7 @@ app.use(cors()) // Allows front-end to consume our api
 
 // app.use(bodyParser.json());
 
+app.get("/", (req, res) => res.send("This is the api root!"));
 app.use('/makeup', routes);
 
 const PORT = process.env.PORT || 3000;
@@ -35,11 +36,12 @@ db.on("connected", () => {
 })
 
 
-//router.get("/", (req, res) => res.send("This is the api root!"));
 // router.use("/makeups", makeupsRoutes);
 
 
+// db.off("disconnected", () => {
 
+// })
 
 
 
