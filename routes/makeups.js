@@ -6,7 +6,8 @@ const router = express.Router();
 
 router.get("/", controllers.getMakeups);
 router.get("/:id", controllers.getMakeup);
-router.get("/cat/:productType", controllers.getMakeupByType);
+router.get("/type/:productType", controllers.getMakeupByType);
+router.get("/name/:name", controllers.getMakeupByName);
 router.get("/brand/:brand", controllers.getMakeupByBrand);
 router.post("/", controllers.createMakeup);
 router.put("/:id", controllers.updateMakeup);

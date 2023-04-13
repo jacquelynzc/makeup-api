@@ -51,6 +51,22 @@ export const getMakeupByType = async (req, res) => {
   }
 };
 
+export const getMakeupByName = async (req, res) => {
+  try {
+    const name = req.params.name;
+    const lowerCase = new RegExp(`^${name}$`, 'i')
+    const makeup = await Makeup.find({name: lowerCase});
+
+    if (makeup.length > 0) {
+      return res.json(makeup);
+    } else {res.status(404).json({error: error.message})}
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Makeup not found!" });
+  }
+};
+
 export const createMakeup = async (req, res) => {
   try {
     const makeup = new Makeup(req.body);

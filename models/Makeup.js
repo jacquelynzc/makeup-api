@@ -6,11 +6,11 @@ const makeupSchema = new mongoose.Schema ({
     productType: String,
     image: String,
     productLink: String,
-    description: String,
     colours: [{
         hexValue: String,
         colorName: String 
-    }]
+    }],
+    description: String
 })
 
 export default mongoose.model('makeups', makeupSchema)

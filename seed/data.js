@@ -12,8 +12,8 @@ let newMakeups = makeups.map((makeup) => {
     productType: makeup.product_type,
     image: makeup.image_link,
     productLink: makeup.product_link,
-    description: makeup.description,
-    colours: productColors
+    colours: productColors,
+    description: makeup.description
   };
 });
 
