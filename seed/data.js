@@ -9,6 +9,7 @@ let newMakeups = makeups.map((makeup) => {
   return {
     name: makeup.name,
     brand: makeup.brand,
+    productType: makeup.product_type,
     image: makeup.image_link,
     productLink: makeup.product_link,
     description: makeup.description,

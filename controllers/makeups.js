@@ -36,6 +36,21 @@ export const getMakeupByBrand = async (req, res) => {
   }
 };
 
+export const getMakeupByType = async (req, res) => {
+  try {
+    const productType = req.params.productType;
+    const makeup = await Makeup.find({productType: productType});
+
+    if (makeup.length > 0) {
+      return res.json(makeup);
+    } else {res.status(404).json({error: error.message})}
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Makeup not found!" });
+  }
+};
+
 export const createMakeup = async (req, res) => {
   try {
     const makeup = new Makeup(req.body);
