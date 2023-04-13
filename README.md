@@ -23,7 +23,7 @@
   - <a href="https://makeup.herokuapp.com/makeup" target="_blank">Show makeup database with all products</a>
   - <a href="https://makeup.herokuapp.com/makeup/brand/colourpop" target="_blank">Search by brand</a> (brand: colourpop)
   - <a href="https://makeup.herokuapp.com/makeup/type/eyeliner" target="_blank">Search by name</a> (name: cloud paint)
-  - * broken * <a href="https://makeup.herokuapp.com/makeup/type/cloud paint" target="_blank">Search by type</a> (type: eyeliner)
+  - <a href="https://makeup.herokuapp.com/makeup/type/cloud paint" target="_blank">Search by type</a> (type: eyeliner) ✮ broken ✮
 - **POST**: <br>
   Add new makeup to the database using path: /
 - **PUT**: <br>
