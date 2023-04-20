@@ -1,70 +1,63 @@
-<center> 
+ 
 
-# MAKEUP API
-  
-## •───────•°•❀•°•───────•
+# __MAKEUP API__
   
 
 
-### <center>
 
-***API Endpoint***: <br> <a href="https://makeup.herokuapp.com/makeup" target="_blank">makeup.herokuapp.com/makeup</a> 
+##  •───────•°•❀•°•───────•
+  
+<br>
 
+##  ***Calls & Paths***: 
+### Endpoints: <br> 
+
+GET:
+- <a href="https://makeup.herokuapp.com">root</a>: makeup.herokuapp.com
+- <a href="https://makeup.herokuapp.com/makeup" >full database</a>: makeup.herokuapp.com/makeup 
+- get by product type: /type/:productType
+  - <a href="https://makeup.herokuapp.com/makeup/type/mascara" >mascara</a>: /type/mascara
+- get by brand: /brand/:brand
+  - <a href="https://makeup.herokuapp.com/makeup/brand/colourpop" >colourpop</a>: /brand/colourpop
+- get by makeup name: name/:name 
+  - <a href="https://makeup.herokuapp.com/makeup/name/cloud paint" >cloud paint</a>: /name/cloud paint
+
+
+POST: <br>
+  add new makeup: /
+
+PUT: <br>
+  update makeup by ID: /:id
+
+DELETE: <br>
+  delete a makeup entry by ID: /:id
 
 <br>
 
-### <center> ***API Calls & Paths***: 
+### Filters
 
-###### *Response Format*: JSON
+- search for eyeliner: /type/eyeliner <br>
+*example*:
+[makeup.herokuapp.com/type/eyeliner](https://makeup.herokuapp.com/type/eyeliner)
+![eyeliner](images/eyeliner.png)
 
-</center>
-
-- **GET**: 
-  - <a href="https://makeup.herokuapp.com/makeup" target="_blank">Show makeup database with all products</a>
-  - <a href="https://makeup.herokuapp.com/makeup/brand/colourpop" target="_blank">Search by brand</a> (brand: colourpop)
-  - <a href="https://makeup.herokuapp.com/makeup/type/eyeliner" target="_blank">Search by name</a> (name: cloud paint)
-  - <a href="https://makeup.herokuapp.com/makeup/type/cloud paint" target="_blank">Search by type</a> (type: eyeliner) ✮ broken ✮
-- **POST**: <br>
-  Add new makeup to the database using path: /
-- **PUT**: <br>
-   Update makeup by ID using path: /:id
-- **DELETE**: <br>
-  Deletes a makeup entry by ID using path: /:id
-
-
-<center>
-
-
-
-
----
-
-
-### ***Filters***
-
-</center>
-
-
-
-- To search for the brand “benefit”, append '/brands/benefit' <br>
+- search for the brand "benefit": /brands/benefit <br>
 *example*:
 [makeup.herokuapp.com/brands/benefit](https://makeup.herokuapp.com/brands/benefit)
+![benefit](images/benefit.png)
 
-- To search for the name "wowder", append '/name/wowder' <br>
+- search for the name "wowder": /name/wowder <br>
 *example*:
 [makeup.herokuapp.com/name/wowder](https://makeup.herokuapp.com/name/wowder)
-
-- Theoretically you should be able to search for a type (for example, "lipstick") by appending '/type/lipstick' 
-  On the localhost route, it works perfectly. However when appending '/type/lipstick' to the heroku URL, it returns "message": "Makeup not found!". 
-  <br>
-*example*:
-[makeup.herokuapp.com/type/lipstick](https://makeup.herokuapp.com/type/lipstick)
+![wowder](images/wowder.png)
 
 ---
 
-### ***Brands List***
+<br>
 
-</center>
+### ***brands in database:***
+<br>
+
 
 ```
 almay
@@ -127,11 +120,11 @@ zorah biocosmetiques
 ```
 ---
 
-<center>
+
 
 ### ***Dependencies***
 
-</center>
+
 
 
 - express
@@ -147,8 +140,9 @@ zorah biocosmetiques
 
 
 
+----
+----
+----
+Source: <a href="https://www.makeup-api.herokuapp.com/" >Makeup API</a>
 
-----
-----
-Source: <a href="https://www.makeup-api.herokuapp.com/" target="_blank">Makeup API</a>
 
