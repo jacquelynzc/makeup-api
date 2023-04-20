@@ -133,16 +133,11 @@ zorah biocosmetiques
 - chalk
 - nodemon
 
+<br>
 
 
+##  •───────•°•❀•°•───────•
 
-
-
-
-
-----
-----
-----
 Source: <a href="https://www.makeup-api.herokuapp.com/" >Makeup API</a>
 
 
